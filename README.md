@@ -44,3 +44,32 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+-----
+
+```js
+it('only shows a modal on first visit', () => {
+  cy.visit('http://localhost:3000/')
+    .get('[data-testid=modal]')
+    .should('be.visible')
+    .get('[aria-label=Close]')
+    .click()
+
+    // should not load a second time
+    .reload()
+    .get('[data-testid=modal]')
+    .should('not.exist')
+})
+```
+
+```js
+import BaseModal from './BaseModal'
+
+it('closes when the X button is pressed', () => {
+  cy.mount(<BaseModal />)
+    .get('[aria-label=Close]')
+    .click()
+    .get('[data-testid=modal]')
+    .should('not.exist')
+})
+```

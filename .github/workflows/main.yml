@@ -20,4 +20,4 @@ jobs:
           build: echo "No need to build"
           start: echo "No need to start"
           # Specify Browser since container image is compile with Firefox
-          browser: firefox
+          browser: chrome

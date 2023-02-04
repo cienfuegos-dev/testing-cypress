@@ -5,6 +5,7 @@ RUN apk add --no-cache libc6-compat
 
 # Install node libraries
 ENV NODE_ENV production
+ENV CI true
 COPY package*.json ./
 RUN npm ci
 

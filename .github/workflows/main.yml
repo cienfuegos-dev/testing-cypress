@@ -15,5 +15,5 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5.0.8 # use the explicit version number
         with:
-          build: docker build -t mewoing .
-          start: docker run -it --rm -p 3000:3000 --env-file=.env mewoing
+          build: npm run build
+          start: npm start

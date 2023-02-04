@@ -7,6 +7,7 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    container: cypress/browsers:node12.18.3-chrome87-ff82
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -17,3 +18,5 @@ jobs:
         with:
           build: npm run build
           start: npm start
+          # Specify Browser since container image is compile with Firefox
+          browser: firefox

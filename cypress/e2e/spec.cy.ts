@@ -1,6 +1,6 @@
 describe('my cool spec', () => {
   it('should work', () => {
-    cy.visit('https://example.cypress.io')
+    cy.visit('/')
     cy.contains('type').click()
     // Should be on a new URL which
     // includes '/commands/actions'

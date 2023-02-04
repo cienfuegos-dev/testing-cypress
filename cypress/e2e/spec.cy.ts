@@ -1,17 +1,18 @@
 describe('my cool spec', () => {
   it('should work', () => {
     cy.visit('/')
-    cy.contains('type').click()
-    // Should be on a new URL which
-    // includes '/commands/actions'
-    cy.url().should('include', '/commands/actions')
+    cy.contains('Dashboard').click()
+    cy.url().should('include', '/dashboard')
+    cy.contains('Welcome to the dashboard.')
 
     // Get an input, type into it
-    cy.get('.action-email').type('fake@email.com')
+    cy.get('[data-username]').type('fake@email.com')
 
     //  Verify that the value has been updated
-    cy.get('.action-email').should('have.value', 'fake@email.com')
+    cy.get('[data-username]').should('have.value', 'fake@email.com')
 
-    expect(true).to.equal(true)
+    cy.contains('Hi there, fake@email.com!').should('not.exist')
+    cy.get('[data-password]').type('abcde{enter}')
+    cy.contains('Hi there, fake@email.com!')
   })
 })

@@ -4,6 +4,7 @@ describe('my cool spec', () => {
     cy.contains('Dashboard').click()
     cy.url().should('include', '/dashboard')
     cy.contains('Welcome to the dashboard.')
+    cy.contains('Demo Key: a-fake-key')
 
     // Get an input, type into it
     cy.get('[data-username]').type('fake@email.com')

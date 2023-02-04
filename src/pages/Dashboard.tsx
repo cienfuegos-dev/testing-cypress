@@ -10,6 +10,7 @@ export function Dashboard() {
         e.preventDefault();
         setWelcomeText(`Hi there, ${username}!`);
     };
+    const {REACT_APP_DEMO_KEY} = (window as any).publicEnv;
     return (
         <div>
             <h2>Dashboard</h2>
@@ -22,6 +23,7 @@ export function Dashboard() {
             <p>
                 {welcomeText}
             </p>
+            <strong>Demo Key: </strong><code>{REACT_APP_DEMO_KEY}</code>
         </div>
     );
 }

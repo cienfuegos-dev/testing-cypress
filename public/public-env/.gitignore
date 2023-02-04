@@ -1,0 +1,3 @@
+# Don't remove this file, it will ensure the folder public-env exists which is required at deploy time.
+*
+!.gitignore
